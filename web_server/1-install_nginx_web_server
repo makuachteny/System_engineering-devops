@@ -4,5 +4,5 @@
 # update the package list first
 sudo apt-get -y update && sudo apt-get -y upgrade
 sudo install nginx -y
-sudo echo -e "Holberton School" > /var/www/html/index.html
+echo "Holberton School" > /var/www/html/index.html
 sudo service nginx start
