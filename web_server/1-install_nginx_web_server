@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Bash script on how to install nginx server and write content to the root
+sudo apt update -y
+sudo install nginx -y
+sudo echo "Holberton School" > 
