@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 # Bash script on how to install nginx server and write content to the root
-sudo apt update -y
+
+# update the package list first
+sudo apt-get -y update && sudo apt-get -y upgrade
 sudo install nginx -y
-sudo echo "Holberton School" > 
+sudo echo -e "Holberton School" > /var/www/html/index.html
+sudo service nginx start
