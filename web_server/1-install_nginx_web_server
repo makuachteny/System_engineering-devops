@@ -4,5 +4,21 @@
 # update the package list first
 sudo apt-get -y update && sudo apt-get -y upgrade
 sudo install nginx -y
-echo "Holberton School" > /var/www/html/index.html
-sudo service nginx start
+
+mkdir /etc/nginx/html
+
+touch /etc/nginx/html/index.html
+
+
+echo "Holberton School" > /etc/nginx/html/index.html
+
+
+printf %s "server {
+     listen      80 default_server;
+     listen      [::]:80 default_server;
+     root        /etc/nginx/html;
+     index       index.html index.htm;
+}
+" > /etc/nginx/sites-available/default
+
+service nginx restart
