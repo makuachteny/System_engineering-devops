@@ -8,20 +8,15 @@ sudo install nginx -y
 sudo mkdir /etc/nginx/html
 sudo touch /etc/nginx/html/index.html
 # store configurations
-new_config=\
-"server {
+sudo echo "server {
         listen 80 default_server;
         listen [::]:80 default_server;
-            root/var/ww/html;
+        root   /var/ww/html;
         index index.html index.htm index.nginx-debian.html;
         server_name _;
-        location / {
-                try_files \$uri \$uri/ =404;
-        }
+      
         location /redirect_me { 
             return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
         }
-}
-"
-echo "$new_config" > /etc/nginx/sites-available/default
+}" > /etc/nginx/sites-available/default/redirect_me
 sudo service nginx restart
