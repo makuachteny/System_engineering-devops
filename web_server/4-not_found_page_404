@@ -4,17 +4,17 @@
 sudo apt-get update
 sudo apt-get install -y nginx
 
-sudo mkdir /etc/nginx/html
+mkdir /etc/nginx/html
 
-sudo touch /etc/nginx/html/index.html
+touch /etc/nginx/html/index.html
 
 
-sudo echo "Holberton School" > /etc/nginx/html/index.html
-sudo echo "Ceci n'est pas une page" > /etc/nginx/html/404.html
+echo "Holberton School" > /etc/nginx/html/index.html
+echo "Ceci n'est pas une page" > /etc/nginx/html/404.html
 
 
 # Create custom 404 error page
-sudo echo "<!DOCTYPE html>
+echo "<!DOCTYPE html>
 <html>
 <head>
   <title>404 Not Found</title>
