@@ -7,16 +7,19 @@ sudo install nginx -y
 
 sudo mkdir /etc/nginx/html
 sudo touch /etc/nginx/html/index.html
+
+echo "Holberton School" > /etc/nginx/html/index.html
 # store configurations
-sudo echo "server {
-        listen 80 default_server;
-        listen [::]:80 default_server;
-        root   /var/ww/html;
-        index index.html index.htm index.nginx-debian.html;
-        server_name _;
-      
-        location /redirect_me { 
-            return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
-        }
-}" > /etc/nginx/sites-available/default/redirect_me
+printf %s "server {
+     listen      80 default_server;
+     listen      [::]:80 default_server;
+     root        /etc/nginx/html;
+     index       index.html index.htm;
+     location /redirect_me {
+        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+    }
+}
+" > /etc/nginx/sites-available/default
+
+
 sudo service nginx restart
