@@ -5,11 +5,10 @@
 sudo apt-get -y update && sudo apt-get -y upgrade
 sudo install nginx -y
 
-mkdir /var/www/html
+mkdir /etc/nginx/html
 
-touch /var/www/html/index.html
+touch /etc/nginx/html/index.html
 
-echo "Holberton School" > /var/www/html/index.html
+echo "Holberton School" > /etc/nginx/html/index.html
 
-service nginx restart
-
+service nginx restart 
