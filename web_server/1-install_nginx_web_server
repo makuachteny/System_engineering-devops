@@ -12,4 +12,4 @@ touch /var/www/html/index.html
 echo "Holberton School" > /var/www/html/index.html
 
 service nginx restart
->>>>>>> 037e87f03b1f0a15370fe1b444993b057c47ddf0
+
