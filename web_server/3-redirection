@@ -1,17 +1,9 @@
 #!/usr/bin/env bash
-# Bash Script that installs ngix and configures it's server so that /redirect_me is redirecting to another page
+# Bash script that configures a Nginx server to redirect '/redirect_me' to 'http://youtube.com/'
 
-# update the package list first
-<<<<<<< HEAD
+# Update Nginx
 apt-get update
 apt-get install -y nginx
-=======
-apt-get -y update && sudo apt-get -y upgrade
-install nginx -y
-
-mkdir /etc/nginx/html
-touch /etc/nginx/html/index.html
->>>>>>> aacaacad73b8060302dacfd25d9b91214a5a18d4
 
 mkdir /etc/nginx/html
 touch /etc/nginx/html/index.html
@@ -26,8 +18,4 @@ printf %s "server {
     }
 }" > /etc/nginx/sites-available/default
 
-<<<<<<< HEAD
-=======
-
->>>>>>> aacaacad73b8060302dacfd25d9b91214a5a18d4
 service nginx restart
