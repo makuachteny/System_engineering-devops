@@ -2,13 +2,11 @@
 # Bash script on how to install nginx server and write content to the root
 
 # update the package list first
-sudo apt-get -y update && sudo apt-get -y upgrade
-sudo install nginx -y
+apt-get update
+apt-get install -y nginx
 
 mkdir /etc/nginx/html
-
 touch /etc/nginx/html/index.html
-
 echo "Holberton School" > /etc/nginx/html/index.html
 printf %s "server {
      listen      80 default_server;
