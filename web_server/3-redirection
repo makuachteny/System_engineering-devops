@@ -2,11 +2,11 @@
 # Bash Script that installs ngix and configures it's server so that /redirect_me is redirecting to another page
 
 # update the package list first
-sudo apt-get -y update && sudo apt-get -y upgrade
-sudo install nginx -y
+apt-get -y update && sudo apt-get -y upgrade
+install nginx -y
 
-sudo mkdir /etc/nginx/html
-sudo touch /etc/nginx/html/index.html
+mkdir /etc/nginx/html
+touch /etc/nginx/html/index.html
 
 echo "Holberton School" > /etc/nginx/html/index.html
 # store configurations
@@ -22,4 +22,4 @@ printf %s "server {
 " > /etc/nginx/sites-enabled/default
 
 
-sudo service nginx restart
+service nginx restart
