@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 #start apache2 inside docker
 service apache2 start
+sudo docker run -p 8080:80 -d -it holbertonschool/265-0
+sudo curl 0:80
