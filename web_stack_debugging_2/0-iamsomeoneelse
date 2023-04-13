@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#Bash Script that accepts one argument and checks the user
+sudo -u "$1" whoami
