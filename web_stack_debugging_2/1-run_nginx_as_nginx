@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Bash script that runs Nginx as the nginx user
+
+# Kill all processes with the name "apache2"
+pkill -f apache2
+# Change the permissions of the "nginx.conf" file to read and write for the owner and read-only for others
+chmod 644 /etc/nginx/nginx.conf
+# Replace port "80" with "8080" and add "default_server" directive to the default site configuration file
+sed -i 's/80/8080 default_server/g' /etc/nginx/sites-available/default
+# Add "user nginx;" as the first line in the "nginx.conf" file
+sed -i '1 i user nginx;' /etc/nginx/nginx.conf
+sudo -u nginx service nginx restart
